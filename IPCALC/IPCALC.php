@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.6 2010-08-04 15:14:34 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.7 2010-08-04 15:15:25 oops Exp $
  */
 
 class IPCALCLogic
@@ -209,7 +209,7 @@ class IPCALCLogic
 		}
 
 		$n = 0;
-		while ( $end > $n ) {
+		while ( (int) $end > (int) $n ) {
 			if ( $n > 0 )
 				$prefix--;
 
