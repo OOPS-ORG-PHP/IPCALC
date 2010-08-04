@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.8 2010-08-04 15:29:49 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.9 2010-08-04 15:46:41 oops Exp $
  */
 
 class IPCALCLogic
@@ -144,7 +144,7 @@ class IPCALCLogic
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
 
-		if ( (int) $mask < 33 )
+		if ( (int) $mask >= 0 && (int) $mask < 33 )
 			$mask = self::prefix2long ($mask);
 
 		return (int) $ip & (int) $mask;
@@ -168,7 +168,7 @@ class IPCALCLogic
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
 
-		if ( $mask < 33 )
+		if ( (int) $mask >= 0 && (int) $mask < 33 )
 			$mask = self::prefix2long ((int) $mask);
 
 		$r = ((int) $ip & (int) $mask) | self::not_operand ($mask);
