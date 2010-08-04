@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.3 2010-08-04 14:58:27 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.4 2010-08-04 14:59:48 oops Exp $
  */
 
 class IPCALCLogic
@@ -192,9 +192,6 @@ class IPCALCLogic
 			$start = ip2long ($start);
 		if ( ! is_numeric ($end) )
 			$end   = ip2long ($end);
-
-		if ( $start === $end )
-			return 32;
 
 		if ( $end < $start ) {
 			$n = $start;
