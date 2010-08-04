@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.4 2010-08-04 14:59:48 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.5 2010-08-04 15:03:04 oops Exp $
  */
 
 class IPCALCLogic
@@ -200,7 +200,7 @@ class IPCALCLogic
 		}
 
 		$n = $end - $start;
-		if ( $n === 0 )
+		if ( (int) $n === 0 )
 			return 32;
 
 		while ( ! ($n & 0x80000000) ) {
