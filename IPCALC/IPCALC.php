@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.2 2010-08-04 14:38:52 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.3 2010-08-04 14:58:27 oops Exp $
  */
 
 class IPCALCLogic
@@ -177,7 +177,6 @@ class IPCALCLogic
 	}
 	// }}}
 
-
 	// {{{ (int) IPCALCLogic::guess_prefix ($start, $ip)
 	/**
 	 * Get decimical network prefix about given start and end ip address
@@ -217,7 +216,7 @@ class IPCALCLogic
 			if ( $n > 0 )
 				$prefix--;
 
-			$n = self::broadcast ($start, $prefix);
+			$n = sprintf ('%u', self::broadcast ($start, $prefix));
 		}
 
 		return $prefix;
