@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.7 2010-08-04 15:15:25 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.8 2010-08-04 15:29:49 oops Exp $
  */
 
 class IPCALCLogic
@@ -66,7 +66,7 @@ class IPCALCLogic
 		if ( ! $p || ! preg_match ('/[.]/', $ip) )
 			return false;
 
-		if ( $p < 16777216 )
+		if ( (int) $p < 16777216 )
 			return false;
 
 		return true;
@@ -85,14 +85,14 @@ class IPCALCLogic
 		if ( ! is_numeric ($prefix) )
 			return false;
 
-		if ( $prefix > 32 || $prefix < 0 )
+		if ( (int) $prefix > 32 || (int) $prefix < 0 )
 			return false;
 
 		$l = 32;
 		$shift = 30;
 		$v = 0;
 
-		$prefix = 32 - $prefix;
+		$prefix = 32 - (int) $prefix;
 
 		while ( $l > $prefix ) {
 			if ( $shift < 0 )
@@ -120,7 +120,7 @@ class IPCALCLogic
 	function long2prefix ($mask) {
 		$count = 32;
 		for ( $i = 0; $i < 32; $i++) {
-			if ( !($mask & ((2 << $i) - 1)) )
+			if ( !((int) $mask & ((2 << $i) - 1)) )
 				$count--;
 		}
 		return $count;
@@ -144,10 +144,10 @@ class IPCALCLogic
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
 
-		if ( $mask < 33 )
+		if ( (int) $mask < 33 )
 			$mask = self::prefix2long ($mask);
 
-		return $ip & $mask;
+		return (int) $ip & (int) $mask;
 	}
 	// }}}
 
@@ -169,9 +169,9 @@ class IPCALCLogic
 			$mask = ip2long ($mask);
 
 		if ( $mask < 33 )
-			$mask = self::prefix2long ($mask);
+			$mask = self::prefix2long ((int) $mask);
 
-		$r = ($ip & $mask) | self::not_operand ($mask);
+		$r = ((int) $ip & (int) $mask) | self::not_operand ($mask);
 
 		return $r;
 	}

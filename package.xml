@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-	<!-- $Id: package.xml,v 1.6 2010-08-04 15:03:04 oops Exp $ -->
+	<!-- $Id: package.xml,v 1.7 2010-08-04 15:29:49 oops Exp $ -->
 	<name>ipcalc</name>
 	<channel>pear.oops.org</channel>
 	<summary>IP Calculator</summary>
@@ -13,7 +13,7 @@
 		<active>yes</active>
 	</lead>
 	<date>2010-08-05</date>
-	<time>00:02:57</time>
+	<time>00:29:42</time>
 	<version>
 		<release>1.0.1</release>
 		<api>1.0.0</api>
@@ -29,7 +29,7 @@
 	<contents>
 		<dir name="/">
 			<dir name="IPCALC">
-				<file role="php" md5sum="66e7f1f09c262f3b00beca6e1d42d646"   name="IPCALC.php" />
+				<file role="php" md5sum="9cd5081f24c98363f72e42360eb3ae8d"   name="IPCALC.php" />
 			</dir> <!-- //krisp -->
 			<file md5sum="9be0ba94dbf6fbe9cd06c3d160ba4b0e" name="ipcalc.php" role="php" />
 		</dir> <!-- / -->
@@ -58,7 +58,7 @@
 			<date>2010-08-05</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
 			<notes>- fixed bug of guess_prefix api for negative number broadcast
-- fixed wrong operation when start ip is equal end ip on guess_prefix api
+- fixed wrong operation for negative numbers
 </notes>
 		<release>
 			<version>
