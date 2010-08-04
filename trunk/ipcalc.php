@@ -10,11 +10,11 @@
  * LICENSE: LGPL
  *
  * @category    Networking
- * @package     IPCACL
+ * @package     IPCALC
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: ipcalc.php,v 1.1.1.1 2010-08-04 11:34:17 oops Exp $
+ * @version     CVS: $Id: ipcalc.php,v 1.2 2010-08-04 11:48:30 oops Exp $
  * @link        http://pear.oops.org/package/ipcalc
  * @since       File available since release 0.0.1
  */
