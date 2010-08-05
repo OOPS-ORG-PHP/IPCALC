@@ -11,16 +11,30 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.9 2010-08-04 15:46:41 oops Exp $
+ * @version     CVS: $Id: IPCALC.php,v 1.10 2010-08-05 11:40:12 oops Exp $
  */
 
 class IPCALCLogic
 {
-	// {{{ (long) not_operand ($v)
+	// {{{ (long) IPCALCLogic::signed_casting ($v)
+	/**
+	 * Convert unsigned long to signed long
+	 *
+	 * @access	private
+	 * @return	long	signed long value
+	 * @param	long	unsigned long value
+	 */
+	function signed_casting (&$v) {
+		if ( $v > 0x7fffffff )
+			$v -= 0xffffffff + 1;
+	}
+	// }}}
+
+	// {{{ (long) IPCALCLogic::not_operand ($v)
 	/**
 	 * Support ~(NOT) operand
 	 *
-	 * @access	public
+	 * @access	private
 	 * @return	long
 	 * @param	value	decimical value
 	 */
@@ -119,6 +133,8 @@ class IPCALCLogic
 	 */
 	function long2prefix ($mask) {
 		$count = 32;
+		self::signed_casting ($mask);
+
 		for ( $i = 0; $i < 32; $i++) {
 			if ( !((int) $mask & ((2 << $i) - 1)) )
 				$count--;
@@ -140,9 +156,11 @@ class IPCALCLogic
 	function network ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
 			$ip = ip2long ($ip);
+		self::signed_casting ($ip);
 
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
+		self::signed_casting ($mask);
 
 		if ( (int) $mask >= 0 && (int) $mask < 33 )
 			$mask = self::prefix2long ($mask);
@@ -164,9 +182,11 @@ class IPCALCLogic
 	function broadcast ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
 			$ip = ip2long ($ip);
+		self::signed_casting ($ip);
 
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
+		self::signed_casting ($mask);
 
 		if ( (int) $mask >= 0 && (int) $mask < 33 )
 			$mask = self::prefix2long ((int) $mask);
@@ -190,8 +210,11 @@ class IPCALCLogic
 		$prefix = 0;
 		if ( ! is_numeric ($start) )
 			$start = ip2long ($start);
+		self::signed_casting ($start);
+
 		if ( ! is_numeric ($end) )
 			$end   = ip2long ($end);
+		self::signed_casting ($end);
 
 		if ( $end < $start ) {
 			$n = $start;
