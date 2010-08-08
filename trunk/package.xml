@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
-	<!-- $Id: package.xml,v 1.9 2010-08-05 11:40:12 oops Exp $ -->
+	<!-- $Id: package.xml,v 1.10 2010-08-08 16:34:42 oops Exp $ -->
 	<name>ipcalc</name>
 	<channel>pear.oops.org</channel>
 	<summary>IP Calculator</summary>
@@ -22,7 +22,7 @@
 		<release>stable</release>
 		<api>stable</api>
 	</stability>
-	<license>PHP/LGPL</license>
+	<license>LGPL</license>
 	<notes>- enhanced proper address processing between signed or unsigned
 </notes>
 	<contents>
@@ -55,7 +55,7 @@
 				<api>stable</api>
 			</stability>
 			<date>2010-08-05</date>
-			<license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
 			<notes>- enhanced proper address processing between signed or unsigned
 </notes>
 		</release>
@@ -69,7 +69,7 @@
 				<api>stable</api>
 			</stability>
 			<date>2010-08-05</date>
-			<license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
 			<notes>- fixed bug of guess_prefix api for negative number broadcast
 - fixed wrong operation for negative numbers
 </notes>
@@ -84,7 +84,7 @@
 				<api>stable</api>
 			</stability>
 			<date>2010-08-04</date>
-			<license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
 			<notes>- init
 </notes>
 		</release>
