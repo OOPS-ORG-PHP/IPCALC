@@ -1,5 +1,5 @@
 <?php
-// $Id: test.php,v 1.1.1.1 2010-08-04 11:34:17 oops Exp $
+// $Id$
 
 require_once 'ipcalc.php';
 

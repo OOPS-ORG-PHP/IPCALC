@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: pack.sh,v 1.1.1.1 2010-08-04 11:34:17 oops Exp $
+# $Id$
 
 #if [ "$1" = "doc" ]; then
 #	phpdoc -s on -p on -o HTML:Smarty:PHP -f ePrint.php -t docs -ti "ePrint pear package Reference"

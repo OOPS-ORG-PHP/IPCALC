@@ -11,7 +11,7 @@
  * @author      JoungKyun.Kim <http://oops.org>
  * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     CVS: $Id: IPCALC.php,v 1.10 2010-08-05 11:40:12 oops Exp $
+ * @version     CVS: $Id$
  */
 
 class IPCALCLogic
