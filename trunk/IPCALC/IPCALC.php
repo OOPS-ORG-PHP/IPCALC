@@ -129,7 +129,7 @@ class IPCALCLogic
 	 *
 	 * @access  public
 	 * @return  int		Decimical netowrk prefix
-	 * @parma   long	long type network mask
+	 * @param   long	long type network mask
 	 */
 	function long2prefix ($mask) {
 		$count = 32;
