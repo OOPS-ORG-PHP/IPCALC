@@ -12,8 +12,8 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2010-08-05</date>
-	<time>20:40:03</time>
+	<date>2012-09-08</date>
+	<time>15:53:04</time>
 	<version>
 		<release>1.0.2</release>
 		<api>1.0.0</api>
@@ -28,9 +28,9 @@
 	<contents>
 		<dir name="/">
 			<dir name="IPCALC">
-				<file role="php" md5sum="6f3df13a88a9a54dc33a81d6b60c0d78"   name="IPCALC.php" />
+				<file role="php" md5sum="e18e5bc5cbc5fc283b87a550f4442528"   name="IPCALC.php" />
 			</dir> <!-- //krisp -->
-			<file md5sum="9be0ba94dbf6fbe9cd06c3d160ba4b0e" name="ipcalc.php" role="php" />
+			<file md5sum="f3babbb36bee3257d3a0e931fe4576b8" name="ipcalc.php" role="php" />
 		</dir> <!-- / -->
 	</contents>
 	<dependencies>
@@ -54,7 +54,7 @@
 				<release>stable</release>
 				<api>stable</api>
 			</stability>
-			<date>2010-08-05</date>
+			<date>2012-09-08</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
 			<notes>- enhanced proper address processing between signed or unsigned
 </notes>
