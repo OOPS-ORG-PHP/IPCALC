@@ -13,6 +13,7 @@
  * @version     $Id$
  * @link        http://pear.oops.org/package/ipcalc
  * @since       File available since release 0.0.1
+ * @example     pear_IPCALC/test.php Sample code of IPCLAC class
  * @filesource
  */
 
@@ -70,7 +71,7 @@ class IPCALC
 	 * ip2long API of PHP is returnd signed long value, but this api
 	 * is returned unsigned long value.
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 18 3}
+	 * {@example pear_IPCALC/test.php 18 3}
 	 *
 	 * @access	public
 	 * @return	long	proper address of long type
@@ -85,7 +86,7 @@ class IPCALC
 	/**
 	 * Check given adddress is valid or not
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 24 2}
+	 * {@example pear_IPCALC/test.php 24 2}
 	 *
 	 * @access	public
 	 * @return	boolean retuns true if given address is valid, or false
@@ -100,7 +101,7 @@ class IPCALC
 	/**
 	 * convert prefix to Dotted network mask
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 29 2}
+	 * {@example pear_IPCALC/test.php 29 2}
 	 *
 	 * @access  public
 	 * @return  string	Dotted network mask
@@ -116,7 +117,7 @@ class IPCALC
 	/**
 	 * Convert dotted network mask to decimical network prefix
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 33 2}
+	 * {@example pear_IPCALC/test.php 33 2}
 	 *
 	 * @access  public
 	 * @return  int			Decimical prefix
@@ -132,7 +133,7 @@ class IPCALC
 	/**
 	 * get network address about given ip address and network mask
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 37 2}
+	 * {@example pear_IPCALC/test.php 37 2}
 	 *
 	 * @access  public
 	 * @return  string		returns with type of dotted ipv4 address
@@ -149,7 +150,7 @@ class IPCALC
 	/**
 	 * Get broadcast address for given ip address and network mask
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 41 2}
+	 * {@example pear_IPCALC/test.php 41 2}
 	 *
 	 * @access	public
 	 * @return	string
@@ -166,7 +167,7 @@ class IPCALC
 	/**
 	 * Get decimical network prefix about given start and end ip address
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 45 2}
+	 * {@example pear_IPCALC/test.php 45 2}
 	 *
 	 * @access  public
 	 * @return  int			Decimical network prefix
@@ -182,7 +183,7 @@ class IPCALC
 	/**
 	 * Get dotted network address about given start and end ip address
 	 *
-	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 49 2}
+	 * {@example pear_IPCALC/test.php 49 2}
 	 *
 	 * @access  public
 	 * @return  string		Dotted network mask
