@@ -3,22 +3,22 @@
  * Project: IPCALC :: IP calculator / subnetting
  * File:    IPCALC.php
  *
- * PHP Version 5
- *
- * Copyright (c) 1997-2010 JoungKyun.Kim
- *
- * LICENSE: LGPL
+ * This class is support IP calculating and subnetting.
  *
  * @category    Networking
  * @package     IPCALC
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   1997-2010 OOPS.org
+ * @copyright   (c) 2010, JoungKyun.Kim
  * @license     LGPL
- * @version     CVS: $Id$
+ * @version     $Id$
  * @link        http://pear.oops.org/package/ipcalc
  * @since       File available since release 0.0.1
+ * @filesource
  */
 
+/**
+ * import IPCALCLogic class
+ */
 require_once 'IPCALC/IPCALC.php';
 
 /**
@@ -31,16 +31,17 @@ class IPCALC
 	/**
 	 * CLI check
 	 * @access	private
-	 * @var		boolean
+	 * @staticvar		boolean
 	 */
 	static private $climode = false;
 	// }}}
 
 	// {{{ (void) IPCALC::__construct (void)
-	/*
+	/**
+	 * Initialize IPCALC class
+	 *
 	 * @access	public
 	 * @return	void
-	 * @param	void
 	 */
 	function __construct () {
 		self::init ();
@@ -50,12 +51,11 @@ class IPCALC
 	// }}}
 
 	// {{{ (void) function IPCALC::init (void)
-	/*
+	/**
 	 * Initialize IPCALC class
 	 *
 	 * @access	public
 	 * @return	void
-	 * @param	void
 	 */
 	function init () {
 		if ( php_sapi_name () == 'cli' )
@@ -64,15 +64,17 @@ class IPCALC
 	// }}}
 
 	// {{{ (long) IPCALC::ip2long ($ip)
-	/*
+	/**
 	 * Return unsigned proper address about given Dotted ipv4 address
 	 *
 	 * ip2long API of PHP is returnd signed long value, but this api
 	 * is returned unsigned long value.
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 18 3}
+	 *
 	 * @access	public
 	 * @return	long	proper address of long type
-	 * @param	ip		Dotted ipv4 address
+	 * @param	string	Dotted ipv4 address
 	 */
 	function ip2long ($ip) {
 		return IPCALCLogic::ip2long ($ip);
@@ -83,9 +85,11 @@ class IPCALC
 	/**
 	 * Check given adddress is valid or not
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 24 2}
+	 *
 	 * @access	public
-	 * @return	boolean
-	 * @param	ip		Dotted ipv4 address
+	 * @return	boolean retuns true if given address is valid, or false
+	 * @param	string	Dotted ipv4 address
 	 */
 	function valid_ipv4_addr ($ip) {
 		return IPCALCLogic::valid_ipv4_addr ($ip);
@@ -96,9 +100,11 @@ class IPCALC
 	/**
 	 * convert prefix to Dotted network mask
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 29 2}
+	 *
 	 * @access  public
 	 * @return  string	Dotted network mask
-	 * @param   int		Decimical network prefix
+	 * @param   integer	Decimical network prefix
 	 */
 	function prefix2mask ($prefix) {
 		$r = IPCALCLogic::prefix2long ($prefix);
@@ -110,8 +116,10 @@ class IPCALC
 	/**
 	 * Convert dotted network mask to decimical network prefix
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 33 2}
+	 *
 	 * @access  public
-	 * @return  int
+	 * @return  int			Decimical prefix
 	 * @param   string      Dotted network mask
 	 */
 	function mask2prefix ($mask) {
@@ -120,12 +128,14 @@ class IPCALC
 	}
 	// }}}
 
-	// {{{ (long) IPCALC::network ($ip, $mask) {
+	// {{{ (string) IPCALC::network ($ip, $mask) {
 	/**
 	 * get network address about given ip address and network mask
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 37 2}
+	 *
 	 * @access  public
-	 * @return  string
+	 * @return  string		returns with type of dotted ipv4 address
 	 * @param   string      Dotted ipv4 address
 	 * @param   string      Dotted network mask or decimical prefix
 	 */
@@ -139,10 +149,12 @@ class IPCALC
 	/**
 	 * Get broadcast address for given ip address and network mask
 	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 41 2}
+	 *
 	 * @access	public
 	 * @return	string
-	 * @param	ip		Dotted ipv4 address or long proper address
-	 * @param	mask	Dotted network mask or network prefix
+	 * @param	string	Dotted ipv4 address or long proper address
+	 * @param	string	Dotted network mask or network prefix
 	 */
 	function broadcast ($ip, $mask) {
 		$r = IPCALCLogic::broadcast ($ip, $mask);
@@ -153,6 +165,8 @@ class IPCALC
 	// {{{ (int) IPCALC::guess_prefix ($start, $end)
 	/**
 	 * Get decimical network prefix about given start and end ip address
+	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 45 2}
 	 *
 	 * @access  public
 	 * @return  int			Decimical network prefix
@@ -167,6 +181,8 @@ class IPCALC
 	// {{{ (string) IPCALC::guess_netmask ($start, $end)
 	/**
 	 * Get dotted network address about given start and end ip address
+	 *
+	 * {@example /home/repos/svn/php/docs.eng/pear_IPCALC/test.php 49 2}
 	 *
 	 * @access  public
 	 * @return  string		Dotted network mask
