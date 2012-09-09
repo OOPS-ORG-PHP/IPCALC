@@ -16,6 +16,12 @@
  * @filesource
  */
 
+/**
+ * This class is subpackage of IPCALC class, and support various
+ * api for IPCALC class
+ *
+ * @package IPCALC
+ */
 class IPCALCLogic
 {
 	// {{{ (long) IPCALCLogic::signed_casting ($v)
