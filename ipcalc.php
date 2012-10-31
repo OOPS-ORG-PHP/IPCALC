@@ -26,17 +26,8 @@ require_once 'IPCALC/IPCALC.php';
  * IPCALC 의 frontend Class
  * @package	IPCALC
  */
-class IPCALC
+class IPCALC extends IPCALCLogic
 {
-	// {{{ properties
-	/**
-	 * CLI check
-	 * @access	private
-	 * @staticvar		boolean
-	 */
-	static private $climode = false;
-	// }}}
-
 	// {{{ (void) IPCALC::__construct (void)
 	/**
 	 * Initialize IPCALC class
@@ -44,24 +35,7 @@ class IPCALC
 	 * @access	public
 	 * @return	void
 	 */
-	function __construct () {
-		self::init ();
-
-		$this->climode = &self::$climode;
-	}
-	// }}}
-
-	// {{{ (void) function IPCALC::init (void)
-	/**
-	 * IPCALC class 초기화
-	 *
-	 * @access	public
-	 * @return	void
-	 */
-	function init () {
-		if ( php_sapi_name () == 'cli' )
-			self::$climode = true;
-	}
+	function __construct () { }
 	// }}}
 
 	// {{{ (long) IPCALC::ip2long ($ip)
@@ -78,7 +52,7 @@ class IPCALC
 	 * @param	string Dot로 구분된 IPv4 주소
 	 */
 	function ip2long ($ip) {
-		return IPCALCLogic::ip2long ($ip);
+		return parent::ip2long ($ip);
 	}
 	// }}}
 
@@ -93,7 +67,7 @@ class IPCALC
 	 * @param	string  Dot로 구분된 IPv4 주소
 	 */
 	function valid_ipv4_addr ($ip) {
-		return IPCALCLogic::valid_ipv4_addr ($ip);
+		return parent::valid_ipv4_addr ($ip);
 	}
 	// }}}
 
@@ -108,7 +82,7 @@ class IPCALC
 	 * @param   integer	네트워크 prefix
 	 */
 	function prefix2mask ($prefix) {
-		$r = IPCALCLogic::prefix2long ($prefix);
+		$r = parent::prefix2long ($prefix);
 		return long2ip ($r);
 	}
 	// }}}
@@ -125,7 +99,7 @@ class IPCALC
 	 */
 	function mask2prefix ($mask) {
 		$mask = ip2long ($mask);
-		return IPCALCLogic::long2prefix ($mask);
+		return parent::long2prefix ($mask);
 	}
 	// }}}
 
@@ -142,7 +116,7 @@ class IPCALC
 	 * @param   string 네트워크 mask 또는 prefix
 	 */
 	function network ($ip, $mask) {
-		$r = IPCALCLogic::network ($ip, $mask);
+		$r = parent::network ($ip, $mask);
 		return long2ip ($r);
 	}
 	// }}}
@@ -160,7 +134,7 @@ class IPCALC
 	 * @param	string	네트워크 mask
 	 */
 	function broadcast ($ip, $mask) {
-		$r = IPCALCLogic::broadcast ($ip, $mask);
+		$r = parent::broadcast ($ip, $mask);
 		return long2ip ($r);
 	}
 	// }}}
@@ -177,7 +151,7 @@ class IPCALC
 	 * @param   string      범위의 마지막 IPv4 주소
 	 */
 	function guess_prefix ($start, $end) {
-		return IPCALCLogic::guess_prefix ($start, $end);
+		return parent::guess_prefix ($start, $end);
 	}
 	// }}}
 
@@ -193,7 +167,7 @@ class IPCALC
 	 * @param   string      범위의 마지막 IPv4 주소
 	 */
 	function guess_netmask ($start, $end) {
-		return IPCALCLogic::guess_netmask ($start, $end);
+		return parent::guess_netmask ($start, $end);
 	}
 	// }}}
 
