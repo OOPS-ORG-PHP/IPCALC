@@ -1,27 +1,19 @@
 <?php
 /**
- * Project: IPCALCLogic :: The internal API about IPCALC class
- * File:    IPCALC/IPCALC.php
+ * PHP Version 5
  *
- * This class is subpackage of IPCALC class, and support various
- * api for IPCALC class
+ * Copyright (c) 1997-2010 JoungKyun.Kim
+ *
+ * LICENSE: LGPL
  *
  * @category    Networking
- * @package     IPCALC
- * @subpackage  IPCALCLogic
+ * @package     IPCACLLogic
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2010, JoungKyun.Kim
+ * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     $Id$
- * @filesource
+ * @version     CVS: $Id$
  */
 
-/**
- * This class is subpackage of IPCALC class, and support various
- * api for IPCALC class
- *
- * @package IPCALC
- */
 class IPCALCLogic
 {
 	// {{{ (long) IPCALCLogic::signed_casting ($v)
@@ -44,7 +36,7 @@ class IPCALCLogic
 	 *
 	 * @access	private
 	 * @return	long
-	 * @param	logn	decimical value
+	 * @param	value	decimical value
 	 */
 	function not_operand ($v) {
 		$v = decbin ($v);
@@ -59,7 +51,7 @@ class IPCALCLogic
 	// }}}
 
 	// {{{ (long) IPCALCLogic::ip2long ($ip)
-	/**
+	/*
 	 * Return unsigned proper address about given dotted ipv4 address
 	 *
 	 * ip2long API of PHP is returnd signed long value, but this api
@@ -67,7 +59,7 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long	proper address of long type
-	 * @param	string	dotted ipv4 address
+	 * @param	ip		dotted ipv4 address
 	 */
 	function ip2long ($ip) {
 		return sprintf ('%lu', ip2long ($ip));
@@ -80,7 +72,7 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	boolean
-	 * @param	string	dotted ipv4 address
+	 * @param	ip		dotted ipv4 address
 	 */
 	function valid_ipv4_addr ($ip) {
 		$ip = preg_replace ('/[\s]/', '', $ip);
@@ -101,7 +93,7 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long	long type network maks or false
-	 * @param	int		decimical network prefix
+	 * @param	prefix	decimical network prefix
 	 */
 	function prefix2long ($prefix) {
 		if ( ! is_numeric ($prefix) )
@@ -137,7 +129,7 @@ class IPCALCLogic
 	 *
 	 * @access  public
 	 * @return  int		Decimical netowrk prefix
-	 * @param   long	long type network mask
+	 * @parma   long	long type network mask
 	 */
 	function long2prefix ($mask) {
 		$count = 32;
@@ -158,8 +150,8 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long
-	 * @param	string	dotted ipv4 address or long proper address
-	 * @param	string	dotted network mask or network prefix
+	 * @param	ip		dotted ipv4 address or long proper address
+	 * @param	mask	dotted network mask or network prefix
 	 */
 	function network ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
@@ -184,8 +176,8 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long
-	 * @param	string	dotted ipv4 address or long proper address
-	 * @param	string	dotted network mask or network prefix
+	 * @param	ip		dotted ipv4 address or long proper address
+	 * @param	mask	dotted network mask or network prefix
 	 */
 	function broadcast ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
@@ -205,14 +197,14 @@ class IPCALCLogic
 	}
 	// }}}
 
-	// {{{ (int) IPCALCLogic::guess_prefix ($start, $end)
+	// {{{ (int) IPCALCLogic::guess_prefix ($start, $ip)
 	/**
 	 * Get decimical network prefix about given start and end ip address
 	 *
 	 * @access	public
 	 * @return	int		Decimical network prefix
-	 * @param	string	Dotted ipv4 address or long proper address
-	 * @param	string	Dotted ipv4 address or long proper address
+	 * @param	start	Dotted ipv4 address or long proper address
+	 * @param	end		Dotted ipv4 address or long proper address
 	 */
 	function guess_prefix ($start, $end) {
 		$prefix = 0;
@@ -257,8 +249,8 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	string	Dotted IPv4 address
-	 * @param	string	Dotted ipv4 address or long proper address
-	 * @param	string 	Dotted ipv4 address or long proper address
+	 * @param	start	Dotted ipv4 address or long proper address
+	 * @param	end  	Dotted ipv4 address or long proper address
 	 */
 	function guess_netmask ($start, $end) {
 		$r = self::prefix2long (self::guess_prefix ($start, $end));
