@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>ipcalc</name>
+ <channel>pear.oops.org</channel>
+ <summary>IP Calculator</summary>
+ <description>PEAR&apos;s krisp:: IPv4 Calculatign and subnetting</description>
+ <lead>
+  <name>JoungKyun.Kim</name>
+  <user>joungkyun</user>
+  <email>joungkyun@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-08-05</date>
+ <time>20:43:05</time>
+ <version>
+  <release>1.0.2</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license>PHP/LGPL</license>
+ <notes>- enhanced proper address processing between signed or unsigned</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="57145dac75de1f6cfe0183ee2535cd16" name="IPCALC/IPCALC.php" role="php" />
+   <file md5sum="9be0ba94dbf6fbe9cd06c3d160ba4b0e" name="ipcalc.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.2</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2010-08-05</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+   <notes>- enhanced proper address processing between signed or unsigned</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2010-08-05</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+   <notes>- fixed bug of guess_prefix api for negative number broadcast
+- fixed wrong operation for negative numbers</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2010-08-04</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.txt">PHP/LGPL</license>
+   <notes>- init</notes>
+  </release>
+ </changelog>
+</package>
