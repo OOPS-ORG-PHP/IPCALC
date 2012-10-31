@@ -1,50 +1,28 @@
 <?php
 /**
- * Project: IPCALCLogic :: The internal API about IPCALC class
- * File:    IPCALC/IPCALC.php
+ * PHP Version 5
  *
- * This class is subpackage of IPCALC class, and support various
- * api for IPCALC class
+ * Copyright (c) 1997-2010 JoungKyun.Kim
+ *
+ * LICENSE: LGPL
  *
  * @category    Networking
- * @package     IPCALC
- * @subpackage  IPCALCLogic
+ * @package     IPCACLLogic
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2010, JoungKyun.Kim
+ * @copyright   1997-2010 OOPS.org
  * @license     LGPL
- * @version     $Id$
- * @filesource
+ * @version     CVS: $Id: IPCALC.php,v 1.1.1.1 2010-08-04 11:34:17 oops Exp $
  */
 
-/**
- * This class is subpackage of IPCALC class, and support various
- * api for IPCALC class
- *
- * @package IPCALC
- */
 class IPCALCLogic
 {
-	// {{{ (long) IPCALCLogic::signed_casting ($v)
-	/**
-	 * Convert unsigned long to signed long
-	 *
-	 * @access	private
-	 * @return	long	signed long value
-	 * @param	long	unsigned long value
-	 */
-	function signed_casting (&$v) {
-		if ( $v > 0x7fffffff )
-			$v -= 0xffffffff + 1;
-	}
-	// }}}
-
-	// {{{ (long) IPCALCLogic::not_operand ($v)
+	// {{{ (long) not_operand ($v)
 	/**
 	 * Support ~(NOT) operand
 	 *
-	 * @access	private
+	 * @access	public
 	 * @return	long
-	 * @param	logn	decimical value
+	 * @param	value	decimical value
 	 */
 	function not_operand ($v) {
 		$v = decbin ($v);
@@ -59,7 +37,7 @@ class IPCALCLogic
 	// }}}
 
 	// {{{ (long) IPCALCLogic::ip2long ($ip)
-	/**
+	/*
 	 * Return unsigned proper address about given dotted ipv4 address
 	 *
 	 * ip2long API of PHP is returnd signed long value, but this api
@@ -67,7 +45,7 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long	proper address of long type
-	 * @param	string	dotted ipv4 address
+	 * @param	ip		dotted ipv4 address
 	 */
 	function ip2long ($ip) {
 		return sprintf ('%lu', ip2long ($ip));
@@ -80,7 +58,7 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	boolean
-	 * @param	string	dotted ipv4 address
+	 * @param	ip		dotted ipv4 address
 	 */
 	function valid_ipv4_addr ($ip) {
 		$ip = preg_replace ('/[\s]/', '', $ip);
@@ -88,7 +66,7 @@ class IPCALCLogic
 		if ( ! $p || ! preg_match ('/[.]/', $ip) )
 			return false;
 
-		if ( (int) $p < 16777216 )
+		if ( $p < 16777216 )
 			return false;
 
 		return true;
@@ -101,20 +79,20 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long	long type network maks or false
-	 * @param	int		decimical network prefix
+	 * @param	prefix	decimical network prefix
 	 */
 	function prefix2long ($prefix) {
 		if ( ! is_numeric ($prefix) )
 			return false;
 
-		if ( (int) $prefix > 32 || (int) $prefix < 0 )
+		if ( $prefix > 32 || $prefix < 0 )
 			return false;
 
 		$l = 32;
 		$shift = 30;
 		$v = 0;
 
-		$prefix = 32 - (int) $prefix;
+		$prefix = 32 - $prefix;
 
 		while ( $l > $prefix ) {
 			if ( $shift < 0 )
@@ -137,14 +115,12 @@ class IPCALCLogic
 	 *
 	 * @access  public
 	 * @return  int		Decimical netowrk prefix
-	 * @param   long	long type network mask
+	 * @parma   long	long type network mask
 	 */
 	function long2prefix ($mask) {
 		$count = 32;
-		self::signed_casting ($mask);
-
 		for ( $i = 0; $i < 32; $i++) {
-			if ( !((int) $mask & ((2 << $i) - 1)) )
+			if ( !($mask & ((2 << $i) - 1)) )
 				$count--;
 		}
 		return $count;
@@ -158,22 +134,20 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long
-	 * @param	string	dotted ipv4 address or long proper address
-	 * @param	string	dotted network mask or network prefix
+	 * @param	ip		dotted ipv4 address or long proper address
+	 * @param	mask	dotted network mask or network prefix
 	 */
 	function network ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
 			$ip = ip2long ($ip);
-		self::signed_casting ($ip);
 
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
-		self::signed_casting ($mask);
 
-		if ( (int) $mask >= 0 && (int) $mask < 33 )
+		if ( $mask < 33 )
 			$mask = self::prefix2long ($mask);
 
-		return (int) $ip & (int) $mask;
+		return $ip & $mask;
 	}
 	// }}}
 
@@ -184,45 +158,41 @@ class IPCALCLogic
 	 *
 	 * @access	public
 	 * @return	long
-	 * @param	string	dotted ipv4 address or long proper address
-	 * @param	string	dotted network mask or network prefix
+	 * @param	ip		dotted ipv4 address or long proper address
+	 * @param	mask	dotted network mask or network prefix
 	 */
 	function broadcast ($ip, $mask) {
 		if ( ! is_numeric ($ip) )
 			$ip = ip2long ($ip);
-		self::signed_casting ($ip);
 
 		if ( ! is_numeric ($mask) )
 			$mask = ip2long ($mask);
-		self::signed_casting ($mask);
 
-		if ( (int) $mask >= 0 && (int) $mask < 33 )
-			$mask = self::prefix2long ((int) $mask);
+		if ( $mask < 33 )
+			$mask = self::prefix2long ($mask);
 
-		$r = ((int) $ip & (int) $mask) | self::not_operand ($mask);
+		$r = ($ip & $mask) | self::not_operand ($mask);
 
 		return $r;
 	}
 	// }}}
 
-	// {{{ (int) IPCALCLogic::guess_prefix ($start, $end)
+
+	// {{{ (int) IPCALCLogic::guess_prefix ($start, $ip)
 	/**
 	 * Get decimical network prefix about given start and end ip address
 	 *
 	 * @access	public
 	 * @return	int		Decimical network prefix
-	 * @param	string	Dotted ipv4 address or long proper address
-	 * @param	string	Dotted ipv4 address or long proper address
+	 * @param	start	Dotted ipv4 address or long proper address
+	 * @param	end		Dotted ipv4 address or long proper address
 	 */
 	function guess_prefix ($start, $end) {
 		$prefix = 0;
 		if ( ! is_numeric ($start) )
 			$start = ip2long ($start);
-		self::signed_casting ($start);
-
 		if ( ! is_numeric ($end) )
 			$end   = ip2long ($end);
-		self::signed_casting ($end);
 
 		if ( $end < $start ) {
 			$n = $start;
@@ -231,7 +201,7 @@ class IPCALCLogic
 		}
 
 		$n = $end - $start;
-		if ( (int) $n === 0 )
+		if ( $n === 0 )
 			return 32;
 
 		while ( ! ($n & 0x80000000) ) {
@@ -240,25 +210,25 @@ class IPCALCLogic
 		}
 
 		$n = 0;
-		while ( (int) $end > (int) $n ) {
+		while ( $end > $n ) {
 			if ( $n > 0 )
 				$prefix--;
 
-			$n = sprintf ('%u', self::broadcast ($start, $prefix));
+			$n = self::broadcast ($start, $prefix);
 		}
 
 		return $prefix;
 	}
 	// }}}
 
-	// {{{ (long) IPCALCLogic::guess_netmask ($start, $end)
+	// {{{ (long) IPCALCLogic::broadcast ($ip, $mask)
 	/**
 	 * Get long type network mask about given start and end ip address
 	 *
 	 * @access	public
 	 * @return	string	Dotted IPv4 address
-	 * @param	string	Dotted ipv4 address or long proper address
-	 * @param	string 	Dotted ipv4 address or long proper address
+	 * @param	start	Dotted ipv4 address or long proper address
+	 * @param	end  	Dotted ipv4 address or long proper address
 	 */
 	function guess_netmask ($start, $end) {
 		$r = self::prefix2long (self::guess_prefix ($start, $end));
