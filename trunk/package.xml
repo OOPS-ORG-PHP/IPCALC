@@ -12,8 +12,8 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2012-09-25</date>
-	<time>02:55:50</time>
+	<date>2012-11-01</date>
+	<time>00:11:20</time>
 	<version>
 		<release>1.0.3</release>
 		<api>1.0.0</api>
@@ -23,14 +23,14 @@
 		<api>stable</api>
 	</stability>
 	<license>LGPL</license>
-	<notes>
+	<notes>- support php 5.4 about E_STRICT
 </notes>
 	<contents>
 		<dir name="/">
 			<dir name="IPCALC">
 				<file role="php" md5sum="42f3a383f5c6a9a7a5c0c71af5dbda0d"   name="IPCALC.php" />
 			</dir> <!-- //krisp -->
-			<file md5sum="8175446709d3cb5138b98c7e080d6ef2" name="ipcalc.php" role="php" />
+			<file md5sum="1d1ca819163edf9c3454eecdb5f27bc2" name="ipcalc.php" role="php" />
 		</dir> <!-- / -->
 	</contents>
 	<dependencies>
@@ -54,9 +54,9 @@
 				<release>stable</release>
 				<api>stable</api>
 			</stability>
-			<date>2012-09-25</date>
+			<date>2012-11-01</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>
+			<notes>- support php 5.4 about E_STRICT
 </notes>
 		</release>
 		<release>
