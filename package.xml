@@ -13,9 +13,9 @@
 		<active>yes</active>
 	</lead>
 	<date>2014-01-25</date>
-	<time>17:42:49</time>
+	<time>17:44:23</time>
 	<version>
-		<release>1.0.3</release>
+		<release>1.0.4</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -23,7 +23,7 @@
 		<api>stable</api>
 	</stability>
 	<license>LGPL</license>
-	<notes>- support php 5.4 about E_STRICT
+	<notes>
 </notes>
 	<contents>
 		<dir name="/">
@@ -45,6 +45,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.4</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2014-01-25</date>
+			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
+			<notes>
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.3</release>
