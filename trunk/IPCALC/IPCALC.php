@@ -10,7 +10,7 @@
  * @package     IPCALC
  * @subpackage  IPCALCLogic
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2010, JoungKyun.Kim
+ * @copyright   (c) 2014, JoungKyun.Kim
  * @license     LGPL
  * @version     $Id$
  * @filesource
