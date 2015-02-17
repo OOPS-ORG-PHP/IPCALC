@@ -8,7 +8,7 @@
  * @category    Networking
  * @package     IPCALC
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2014, JoungKyun.Kim
+ * @copyright   (c) 2015, JoungKyun.Kim
  * @license     LGPL
  * @version     $Id$
  * @link        http://pear.oops.org/package/ipcalc
@@ -51,7 +51,7 @@ class IPCALC extends IPCALCLogic
 	 * @return	long   unsigned 형의 정수형 네트워크 주소
 	 * @param	string Dot로 구분된 IPv4 주소
 	 */
-	function ip2long ($ip) {
+	static function ip2long ($ip) {
 		return parent::ip2long ($ip);
 	}
 	// }}}
@@ -66,7 +66,7 @@ class IPCALC extends IPCALCLogic
 	 * @return	boolean 정상적인 IP일 경우 true, 그 외 false
 	 * @param	string  Dot로 구분된 IPv4 주소
 	 */
-	function valid_ipv4_addr ($ip) {
+	static function valid_ipv4_addr ($ip) {
 		return parent::valid_ipv4_addr ($ip);
 	}
 	// }}}
@@ -81,7 +81,7 @@ class IPCALC extends IPCALCLogic
 	 * @return  string  네트워크 mask
 	 * @param   integer	네트워크 prefix
 	 */
-	function prefix2mask ($prefix) {
+	static function prefix2mask ($prefix) {
 		$r = parent::prefix2long ($prefix);
 		return long2ip ($r);
 	}
@@ -97,7 +97,7 @@ class IPCALC extends IPCALCLogic
 	 * @return  int    네트워크 prefix
 	 * @param   string 네트워크 mask
 	 */
-	function mask2prefix ($mask) {
+	static function mask2prefix ($mask) {
 		$mask = ip2long ($mask);
 		return parent::long2prefix ($mask);
 	}
@@ -115,7 +115,7 @@ class IPCALC extends IPCALCLogic
 	 * @param   string IPv4 주소
 	 * @param   string 네트워크 mask 또는 prefix
 	 */
-	function network ($ip, $mask) {
+	static function network ($ip, $mask) {
 		$r = parent::network ($ip, $mask);
 		return long2ip ($r);
 	}
@@ -133,7 +133,7 @@ class IPCALC extends IPCALCLogic
 	 * @param	string	IPv4 주소 또는 long형 주소값
 	 * @param	string	네트워크 mask
 	 */
-	function broadcast ($ip, $mask) {
+	static function broadcast ($ip, $mask) {
 		$r = parent::broadcast ($ip, $mask);
 		return long2ip ($r);
 	}
@@ -150,7 +150,7 @@ class IPCALC extends IPCALCLogic
 	 * @param   string      범위의 시작 IPv4 주소
 	 * @param   string      범위의 마지막 IPv4 주소
 	 */
-	function guess_prefix ($start, $end) {
+	static function guess_prefix ($start, $end) {
 		return parent::guess_prefix ($start, $end);
 	}
 	// }}}
@@ -166,7 +166,7 @@ class IPCALC extends IPCALCLogic
 	 * @param   string      범위의 시작 IPv4 주소
 	 * @param   string      범위의 마지막 IPv4 주소
 	 */
-	function guess_netmask ($start, $end) {
+	static function guess_netmask ($start, $end) {
 		return parent::guess_netmask ($start, $end);
 	}
 	// }}}
@@ -183,7 +183,7 @@ class IPCALC extends IPCALCLogic
 	 * @return	binary		network byte order로 변환된 binary
 	 * @param	int			4 Byte 양수형 정수
 	 */
-	function htonl ($v) {
+	static function htonl ($v) {
 		return pack ('N', $v);
 	}
 	// }}}
@@ -200,7 +200,7 @@ class IPCALC extends IPCALCLogic
 	 * @return	long		4 Byte signed 정수
 	 * @param	binary		Network byte order로 구성된 4Byte 정수 binary
 	 */
-	function ntohl ($v) {
+	static function ntohl ($v) {
 		for ( $i=3; $i>=0; $i-- )
 			$v1 .= $v[$i];
 
