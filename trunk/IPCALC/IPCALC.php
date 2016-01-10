@@ -83,7 +83,13 @@ class IPCALCLogic
 	 * @param	string	dotted ipv4 address
 	 */
 	static function valid_ipv4_addr ($ip) {
-		$ip = preg_replace ('/[\s]/', '', $ip);
+		$ip = preg_replace ('/\s/', '', $ip);
+
+		if ( ! $p )
+			return false;
+
+		return (long2ip (ip2long ($ip)) == $ip) ? true : false;
+		/*
 		$p = self::ip2long ($ip);
 		if ( ! $p || ! preg_match ('/[.]/', $ip) )
 			return false;
@@ -92,6 +98,7 @@ class IPCALCLogic
 			return false;
 
 		return true;
+		 */
 	}
 	// }}}
 
