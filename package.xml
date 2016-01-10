@@ -12,8 +12,8 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2014-01-25</date>
-	<time>17:44:23</time>
+	<date>2016-01-10</date>
+	<time>22:14:09</time>
 	<version>
 		<release>1.0.4</release>
 		<api>1.0.0</api>
@@ -28,9 +28,9 @@
 	<contents>
 		<dir name="/">
 			<dir name="IPCALC">
-				<file role="php" md5sum="4e18e4a8f3640507feba5862eff02d99"   name="IPCALC.php" />
+				<file role="php" md5sum="588cf8980ba32da5f649da4055a5d310"   name="IPCALC.php" />
 			</dir> <!-- //krisp -->
-			<file md5sum="fedcd65bca75a60484d22d96be8cb2ed" name="ipcalc.php" role="php" />
+			<file md5sum="0660a51d9e5462e11d9803b783ccbeeb" name="ipcalc.php" role="php" />
 		</dir> <!-- / -->
 	</contents>
 	<dependencies>
@@ -54,9 +54,9 @@
 				<release>stable</release>
 				<api>stable</api>
 			</stability>
-			<date>2014-01-25</date>
+			<date>2016-01-10</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>
+			<notes>- rewirte IPCALCLogic::valid_ipv4_addr method
 </notes>
 		</release>
 		<release>
