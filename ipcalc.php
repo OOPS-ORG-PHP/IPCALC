@@ -56,6 +56,13 @@ class IPCALC extends IPCALCLogic
 	}
 	// }}}
 
+	/**
+	 * alias IPCALC::valid_ipv4_addr
+	 */
+	static function is_ipaddr ($ip) {
+		return parent::valid_ipv4_addr ($ip);
+	}
+
 	// {{{ (boolean) IPCALC::valid_ipv4_addr ($ip)
 	/**
 	 * 인자로 주어진 값이 정상적인 IPv4 주소인지를 체크
