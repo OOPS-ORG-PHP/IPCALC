@@ -24,9 +24,9 @@ Discovery of channel "pear.oops.org" succeeded
 [root@host ~]$ # add IPCALC pear package
 [root@host ~]$ pear install oops/ipcalc
 downloading IPCALC-1.0.4.tgz ...
-Starting to download ipcalc-1.0.3.tgz (3,871 bytes)
-...done: 3,871 bytes
-install ok: channel://pear.oops.org/ipcalc-1.0.3
+Starting to download ipcalc-1.0.4.tgz (3,965 bytes)
+...done: 3,965 bytes
+install ok: channel://pear.oops.org/ipcalc-1.0.4
 [root@host ~]$
 ```
 
