@@ -13,9 +13,9 @@
 		<active>yes</active>
 	</lead>
 	<date>2016-06-25</date>
-	<time>21:26:19</time>
+	<time>21:33:20</time>
 	<version>
-		<release>1.0.4</release>
+		<release>1.0.5</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -24,8 +24,6 @@
 	</stability>
 	<license>LGPL</license>
 	<notes>
-		* rewirte IPCALCLogic::valid_ipv4_addr method
-		* add is_ipaddr method that alias IPCALC::valid_ipv4_addr
 	</notes>
 	<contents>
 		<dir name="/">
@@ -47,6 +45,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.5</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2016-06-25</date>
+			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
+			<notes>
+			</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.4</release>
