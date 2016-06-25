@@ -12,8 +12,8 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2016-01-10</date>
-	<time>22:16:28</time>
+	<date>2016-06-25</date>
+	<time>21:26:19</time>
 	<version>
 		<release>1.0.4</release>
 		<api>1.0.0</api>
@@ -24,13 +24,15 @@
 	</stability>
 	<license>LGPL</license>
 	<notes>
-</notes>
+		* rewirte IPCALCLogic::valid_ipv4_addr method
+		* add is_ipaddr method that alias IPCALC::valid_ipv4_addr
+	</notes>
 	<contents>
 		<dir name="/">
 			<dir name="IPCALC">
-				<file role="php" md5sum="43d1d71464d2f58434a57036e404eb81"   name="IPCALC.php" />
+				<file role="php" md5sum="36ecd92d855ca47cb65cdb3065509d35"   name="IPCALC.php" />
 			</dir> <!-- //krisp -->
-			<file md5sum="627e84741b32529ef56db05a7704ef05" name="ipcalc.php" role="php" />
+			<file md5sum="39ce5c233386459ff4ea7571822726da" name="ipcalc.php" role="php" />
 		</dir> <!-- / -->
 	</contents>
 	<dependencies>
@@ -54,11 +56,12 @@
 				<release>stable</release>
 				<api>stable</api>
 			</stability>
-			<date>2016-01-10</date>
+			<date>2016-06-25</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>- rewirte IPCALCLogic::valid_ipv4_addr method
-- add is_ipaddr method that alias IPCALC::valid_ipv4_addr
-</notes>
+			<notes>
+				* rewirte IPCALCLogic::valid_ipv4_addr method
+				* add is_ipaddr method that alias IPCALC::valid_ipv4_addr
+			</notes>
 		</release>
 		<release>
 			<version>
@@ -71,8 +74,9 @@
 			</stability>
 			<date>2014-01-25</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>- support php 5.4 about E_STRICT
-</notes>
+			<notes>
+				* support php 5.4 about E_STRICT
+			</notes>
 		</release>
 		<release>
 			<version>
@@ -85,8 +89,9 @@
 			</stability>
 			<date>2012-09-08</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>- enhanced proper address processing between signed or unsigned
-</notes>
+			<notes>
+				* enhanced proper address processing between signed or unsigned
+			</notes>
 		</release>
 		<release>
 			<version>
@@ -99,9 +104,10 @@
 			</stability>
 			<date>2010-08-05</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>- fixed bug of guess_prefix api for negative number broadcast
-- fixed wrong operation for negative numbers
-</notes>
+			<notes>
+				* fixed bug of guess_prefix api for negative number broadcast
+				* fixed wrong operation for negative numbers
+			</notes>
 		</release>
 		<release>
 			<version>
@@ -114,8 +120,8 @@
 			</stability>
 			<date>2010-08-04</date>
 			<license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-			<notes>- init
-</notes>
+			<notes>* init
+			</notes>
 		</release>
 	</changelog>
 </package>
