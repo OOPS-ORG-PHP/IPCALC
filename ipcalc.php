@@ -8,12 +8,11 @@
  * @category    Networking
  * @package     IPCALC
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2016, JoungKyun.Kim
+ * @copyright   (c) 2018, JoungKyun.Kim
  * @license     LGPL
- * @version     $Id$
  * @link        http://pear.oops.org/package/ipcalc
  * @since       File available since release 0.0.1
- * @example     pear_IPCALC/test.php Sample code of IPCLAC class
+ * @example     IPCALC/test.php Sample code of IPCLAC class
  * @filesource
  */
 
@@ -45,7 +44,7 @@ class IPCALC extends IPCALCLogic
 	 * PHP의 ip2long API가 singed 형이기 때문에 음수의 값이 나올 수
 	 * 있어, 이 API를 제공하여 항상 양수의 값이 나올 수 있도록 지원.
 	 *
-	 * {@example pear_IPCALC/test.php 18 3}
+	 * {@example IPCALC/test.php 18 3}
 	 *
 	 * @access	public
 	 * @return	long   unsigned 형의 정수형 네트워크 주소
@@ -67,7 +66,7 @@ class IPCALC extends IPCALCLogic
 	/**
 	 * 인자로 주어진 값이 정상적인 IPv4 주소인지를 체크
 	 *
-	 * {@example pear_IPCALC/test.php 24 2}
+	 * {@example IPCALC/test.php 24 2}
 	 *
 	 * @access	public
 	 * @return	boolean 정상적인 IP일 경우 true, 그 외 false
@@ -82,7 +81,7 @@ class IPCALC extends IPCALCLogic
 	/**
 	 * 네트워크 prefix를 네트워크 mask로 변환
 	 *
-	 * {@example pear_IPCALC/test.php 29 2}
+	 * {@example IPCALC/test.php 29 2}
 	 *
 	 * @access  public
 	 * @return  string  네트워크 mask
@@ -98,7 +97,7 @@ class IPCALC extends IPCALCLogic
 	/**
 	 * 네트워크 mask를 네트워크 prefix로 변환
 	 *
-	 * {@example pear_IPCALC/test.php 33 2}
+	 * {@example IPCALC/test.php 33 2}
 	 *
 	 * @access  public
 	 * @return  int    네트워크 prefix
@@ -115,7 +114,7 @@ class IPCALC extends IPCALCLogic
 	 * 주어진 IPv4 주소와 네트워크 mask로 구성된 서브넷의 네트워크
 	 * 주소를 반환
 	 *
-	 * {@example pear_IPCALC/test.php 37 2}
+	 * {@example IPCALC/test.php 37 2}
 	 *
 	 * @access  public
 	 * @return  string 해당 서브넷의 네트워크 주소
@@ -133,7 +132,7 @@ class IPCALC extends IPCALCLogic
 	 * 주어진 IPv4 주소와 네트워크 mask로 구성된 서브넷의 브로드캐스트
 	 * 주소를 반환
 	 *
-	 * {@example pear_IPCALC/test.php 41 2}
+	 * {@example IPCALC/test.php 41 2}
 	 *
 	 * @access	public
 	 * @return	string  해당 서브넷의 브로드캐스트 주소
@@ -150,7 +149,7 @@ class IPCALC extends IPCALCLogic
 	/**
 	 * 시작 주소와 마지막 주소를 포함한 서브넷의 prefix를 반환
 	 *
-	 * {@example pear_IPCALC/test.php 45 2}
+	 * {@example IPCALC/test.php 45 2}
 	 *
 	 * @access  public
 	 * @return  int			네트워크 prefix
@@ -166,7 +165,7 @@ class IPCALC extends IPCALCLogic
 	/**
 	 * 시작 주소와 마지막 주소를 포함한 서브넷의 최소 mask를 반환
 	 *
-	 * {@example pear_IPCALC/test.php 49 2}
+	 * {@example IPCALC/test.php 49 2}
 	 *
 	 * @access  public
 	 * @return  string		네트워크 mask
